@@ -1,8 +1,8 @@
 from torch import nn
 
-from transformer.layers.sublayers.layer_norm import LayerNorm
-from transformer.layers.sublayers.multi_head_attention import MultiHeadAttention
-from transformer.layers.sublayers.position_wise_feed_forward import (
+from transformers.layers.sublayers.layer_norm import LayerNorm
+from transformers.layers.sublayers.multi_head_attention import MultiHeadAttention
+from transformers.layers.sublayers.position_wise_feed_forward import (
     PositionwiseFeedForward,
 )
 

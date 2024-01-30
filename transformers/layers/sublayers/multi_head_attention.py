@@ -1,5 +1,5 @@
 from torch import nn
-from transformer.layers.sublayers.scale_dot_product_attention import (
+from transformers.layers.sublayers.scale_dot_product_attention import (
     ScaleDotProductAttention,
 )
 

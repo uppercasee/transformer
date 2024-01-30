@@ -1,8 +1,8 @@
 import torch
 from torch import nn
 
-from transformer.embedding.transformer_embedding import TransformerEmbedding
-from transformer.layers.decoder_layer import DecoderLayer
+from transformers.embedding.transformer_embedding import TransformerEmbedding
+from transformers.layers.decoder_layer import DecoderLayer
 
 
 class Decoder(nn.Module):
