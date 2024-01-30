@@ -20,6 +20,7 @@ To use the Transformer model, you need to install the required dependencies. You
 ```bash
 pip install -r requirement.txt
 ```
+- TODO: Add requirement.txt file
 
 ## Usage
 
