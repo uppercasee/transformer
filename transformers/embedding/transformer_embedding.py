@@ -10,6 +10,16 @@ class TransformerEmbedding(nn.Module):
     they will dense representation of word using weighted matrix with positional encoding information
 
     positional encoding can give positional information to network
+
+    Args:
+        vocab_size: size of vocabulary
+        d_model: dimensions of model
+        max_len: max length of sequence
+        drop_prob: dropout probability
+        device: device type
+
+    Returns:
+        output: [batch_size, length, d_model]
     """
 
     def __init__(self, vocab_size, d_model, max_len, drop_prob, device):

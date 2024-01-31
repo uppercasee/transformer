@@ -11,16 +11,18 @@ class Decoder(nn.Module):
     each layer has three sub-layers. The first is a multi-head self-attention mechanism,
     and the second is a multi-head attention mechanism, and the third is a simple, position-wise fully connected feed-forward network.
 
-    :param dec_voc_size: size of decoder vocabulary
-    :param max_len: maximum length of sequence
-    :param d_model: dimension of model
-    :param ffn_hidden: dimension of feed forward
-    :param n_head: number of heads
-    :param n_layers: number of layers
-    :param drop_prob: dropout rate
-    :param device: device type
+    Args:
+        dec_voc_size: decoder vocabulary size
+        max_len: max length of sequence
+        d_model: dimension of model
+        ffn_hidden: hidden size of feed forward network
+        n_head: number of head
+        n_layers: number of layers
+        drop_prob: dropout probability
+        device: device type
 
-    :return: [batch_size, length, d_model]
+    Returns:
+        output: [batch_size, trg_length, d_model]
     """
 
     def __init__(

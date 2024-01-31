@@ -15,10 +15,13 @@ class MultiHeadAttention(nn.Module):
     3. do scale dot product attention to compute similarity
     4. concat and pass to linear layer
 
-    :param d_model: dimension of model
-    :param n_head: number of heads
+    Args:
+        d_model: dimension of model
+        n_head: number of head
 
-    :return: [batch_size, length, d_model], [batch_size, head, length, length]
+    Returns:
+        output: [batch_size, length, d_model]
+        score: [batch_size, head, length, length]
     """
 
     def __init__(self, d_model, n_head):

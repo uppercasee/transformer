@@ -7,10 +7,12 @@ class LayerNorm(nn.Module):
     Layer Normalization module is used to normalize the outputs of each sub-layer.
     it is applied to the input of each sub-layer, before it is passed through the sub-layer itself.
 
-    :param d_model: dimension of model
-    :param eps: epsilon value to avoid zero division
+    Args:
+        d_model: dimension of model
+        eps: epsilon
 
-    :return: [batch_size, length, d_model]
+    Returns:
+        output: [batch_size, length, d_model]
     """
 
     def __init__(self, d_model, eps=1e-12):

@@ -10,19 +10,22 @@ class Transformer(nn.Module):
     Transformer is composed of the encoder and decoder. Since the output of the encoder is a sequence of vectors,
     we need to add a linear layer to transform them into a sequence of scores, representing the probability of each word in the target language.
 
-    :param src_pad_idx: index of padding token in source language
-    :param trg_pad_idx: index of padding token in target language
-    :param trg_sos_idx: index of start of sentence token in target language
-    :param enc_voc_size: size of encoder vocabulary
-    :param dec_voc_size: size of decoder vocabulary
-    :param d_model: dimension of model
-    :param ffn_hidden: dimension of feed forward
-    :param n_head: number of heads
-    :param n_layers: number of layers
-    :param drop_prob: dropout rate
-    :param device: device type
+    Args:
+        src_pad_idx: source padding index
+        trg_pad_idx: target padding index
+        trg_sos_idx: target start of sentence index
+        enc_voc_size: encoder vocabulary size
+        dec_voc_size: decoder vocabulary size
+        d_model: dimension of model
+        n_head: number of head
+        max_len: max length of sequence
+        ffn_hidden: hidden size of feed forward network
+        n_layers: number of layers
+        drop_prob: dropout probability
+        device: device type
 
-    :return: [batch_size, trg_length, dec_voc_size]
+    Returns:
+        output: [batch_size, trg_length, dec_voc_size]
     """
 
     def __init__(

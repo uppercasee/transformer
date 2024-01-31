@@ -14,12 +14,14 @@ class DecoderLayer(nn.Module):
     2. Multi-Head Attention (with padding mask) used to compute the attention weights,
     3. Position-wise Feed-Forward Networks (with residual connection and layer normalization) used to apply a fully connected feed forward network to each position.
 
-    :param d_model: dimension of model
-    :param ffn_hidden: dimension of feed forward
-    :param n_head: number of heads
-    :param drop_prob: dropout rate
+    Args:
+        d_model: dimension of model
+        ffn_hidden: hidden size of feed forward network
+        n_head: number of head
+        drop_prob: dropout probability
 
-    :return: [batch_size, length, d_model]
+    Returns:
+        output: [batch_size, trg_length, d_model]
     """
 
     def __init__(self, d_model, ffn_hidden, n_head, drop_prob):

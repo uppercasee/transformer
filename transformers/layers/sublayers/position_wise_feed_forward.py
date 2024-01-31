@@ -9,11 +9,13 @@ class PositionwiseFeedForward(nn.Module):
     Dropout is also applied before the second linear transformation.
     It can be described as FFN(x) = max(0, xW1 + b1)W2 + b2.
 
-    :param d_model: dimension of model
-    :param d_ff: dimension of feed forward
-    :param dropout: dropout rate
+    Args:
+        d_model: dimension of model
+        hidden: hidden size of feed forward network
+        drop_prob: dropout probability
 
-    :return: [batch_size, length, d_model]
+    Returns:
+        output: [batch_size, seq_length, d_model]
     """
 
     def __init__(self, d_model, hidden, drop_prob=0.1):

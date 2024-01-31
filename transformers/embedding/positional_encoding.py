@@ -7,6 +7,14 @@ class PositionalEncoding(nn.Module):
     Positional Encoding module injects some information about the relative or absolute position of the tokens in the sequence.
     The positional encodings have the same dimension d_model as the embeddings, so that the two can be summed.
     Here, we use sine and cosine functions of different frequencies.
+
+    Args:
+        max_len: max length of sequence
+        d_model: dimension of model
+        device: device type
+
+    Returns:
+        output: [max_len, d_model]
     """
 
     def __init__(self, max_len=512, d_model=512, device="cpu"):

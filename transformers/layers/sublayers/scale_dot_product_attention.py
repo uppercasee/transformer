@@ -11,11 +11,13 @@ class ScaleDotProductAttention(nn.Module):
     3. pass them softmax to make [0, 1] range
     4. multiply with Value
 
-    :param q: [batch_size, head, length, d_tensor]
-    :param k: [batch_size, head, length, d_tensor]
-    :param v: [batch_size, head, length, d_tensor]
-    :param mask: [batch_size, length, length]
-    :return: [batch_size, head, length, d_tensor], [batch_size, head, length, length]
+    Args:
+        d_tensor: dimension of model (default: 512) (d_model) (d_k)
+        mask: mask  (default: None)
+
+    Returns:
+        output: [batch_size, head, length, d_tensor]
+        score: [batch_size, head, length, length]
     """
 
     def __init__(self):
