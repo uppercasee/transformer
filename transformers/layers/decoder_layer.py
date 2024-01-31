@@ -7,7 +7,7 @@ from transformers.layers.sublayers.position_wise_feed_forward import (
 )
 
 
-class DecoderLayer:
+class DecoderLayer(nn.Module):
     """
     Decoder Layer module is composed of three sub-layers:
     1. Masked Multi-Head Attention (with padding mask and look ahead mask) used to compute the attention weights,
