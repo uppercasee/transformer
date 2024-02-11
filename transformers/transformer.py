@@ -80,7 +80,7 @@ class Transformer(nn.Module):
         """
         make source mask
 
-        Args: 
+        Args:
             src: [batch_size, src_length]
 
         Returns:

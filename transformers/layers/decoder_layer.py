@@ -74,7 +74,7 @@ class DecoderLayer(nn.Module):
     # def forward(self, dec_input, enc_output, src_mask, trg_mask):
     #     """
     #     Args:
-    #         dec_input: decoder input  
+    #         dec_input: decoder input
     #         enc_output: encoder output
     #         src_mask: source mask
     #

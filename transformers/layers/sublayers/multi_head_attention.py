@@ -87,7 +87,7 @@ class MultiHeadAttention(nn.Module):
 
         Args:
             tensor: [batch_size, head, length, d_tensor]
-            
+
         Returns:
             tensor: [batch_size, length, d_model]
         """
