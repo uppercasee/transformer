@@ -58,10 +58,12 @@ class Encoder(nn.Module):
 
     def forward(self, x, src_mask):
         """
-        :param x: [batch_size, src_length]
-        :param src_mask: [batch_size, src_length]
+        Args:
+            x: [batch_size, src_length]
+            src_mask: [batch_size, src_length, src_length]
 
-        :return: [batch_size, src_length, d_model]
+        Returns:
+            output: [batch_size, src_length, d_model]
         """
         # 1. embedding
         output = self.embedding(x)

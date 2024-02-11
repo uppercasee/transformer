@@ -61,12 +61,14 @@ class Decoder(nn.Module):
 
     def forward(self, trg, enc_output, src_mask, trg_mask):
         """
-        :param trg: [batch_size, trg_length]
-        :param enc_output: [batch_size, src_length, d_model]
-        :param src_mask: [batch_size, src_length]
-        :param trg_mask: [batch_size, trg_length]
+        Args:
+            trg: [batch_size, trg_length]
+            enc_output: [batch_size, src_length, d_model]
+            src_mask: [batch_size, src_length, src_length]
+            trg_mask: [batch_size, trg_length, trg_length]
 
-        :return: [batch_size, trg_length, d_model]
+        Returns:
+            output: [batch_size, trg_length, d_model]
         """
         # 1. embedding
         output = self.embedding(trg)

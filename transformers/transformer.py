@@ -79,8 +79,12 @@ class Transformer(nn.Module):
     def make_src_mask(self, src):
         """
         make source mask
-        :param src: [batch_size, src_length]
-        :return: [batch_size, 1, 1, src_length]
+
+        Args: 
+            src: [batch_size, src_length]
+
+        Returns:
+            src_mask: [batch_size, 1, 1, src_length]
         """
         src_mask = (src != self.src_pad_idx).unsqueeze(1).unsqueeze(2)
         return src_mask
@@ -101,9 +105,12 @@ class Transformer(nn.Module):
 
     def forward(self, src, trg):
         """
-        :param src: [batch_size, src_length]
-        :param trg: [batch_size, trg_length]
-        :return: [batch_size, trg_length, dec_voc_size]
+        Args:
+            src: [batch_size, src_length]
+            trg: [batch_size, trg_length]
+
+        Returns:
+            output: [batch_size, trg_length, dec_voc_size]
         """
         src_mask = self.make_src_mask(src)
         trg_mask = self.make_trg_mask(trg)

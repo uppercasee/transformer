@@ -36,6 +36,14 @@ class EncoderLayer(nn.Module):
         self.dropout2 = nn.Dropout(p=drop_prob)
 
     def forward(self, x, src_mask):
+        """
+        Args:
+            x: input
+            src_mask: source mask
+
+        Returns:
+            output: [batch_size, src_length, d_model]
+        """
         # 1. self attention
         output, _ = self.attention(q=x, k=x, v=x, mask=src_mask)
         output = self.norm1(output + x)

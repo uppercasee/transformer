@@ -42,11 +42,13 @@ class DecoderLayer(nn.Module):
 
     def forward(self, dec_input, enc_output, src_mask, trg_mask):
         """
-        :param dec_input: [batch_size, trg_length, d_model]
-        :param enc_output: [batch_size, src_length, d_model]
-        :param src_mask: [batch_size, src_length]
+        Args:
+            dec_input: decoder input
+            enc_output: encoder output
+            src_mask: source mask
 
-        :return: [batch_size, trg_length, d_model], [batch_size, head, trg_length, src_length]
+        Returns:
+            output: [batch_size, trg_length, d_model]
         """
         # 1. masked self attention
         output, _ = self.self_attention(
@@ -71,11 +73,13 @@ class DecoderLayer(nn.Module):
 
     # def forward(self, dec_input, enc_output, src_mask, trg_mask):
     #     """
-    #     :param dec_output: decoder input
-    #     :param enc_input: encoder output
-    #     :param src_mask: source mask
-    #     :param trg_mask: target mask
-    #     :return: decoder output
+    #     Args:
+    #         dec_input: decoder input  
+    #         enc_output: encoder output
+    #         src_mask: source mask
+    #
+    #     Returns:
+    #         output: [batch_size, trg_length, d_model]
     #     """
     #     # 1. compute self attention
     #     _x = dec_input
